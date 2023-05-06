@@ -1,0 +1,43 @@
+ {% extends 'base.html' %}
+
+{% block title %} Книгофил {% endblock %}
+{% block homeactive %} active {% endblock homeactive %}
+
+{% block css %}
+
+{% endblock %}
+
+{% block body %}
+<body>
+<div align="center">
+<br>
+<table bordercolor="gray" border="3" rules="all" width="99%" height="99%">
+
+<tr>
+<br>
+<td valign="top" bgcolor="ivory" ><h4>Порядковый номер</h4></td>
+<td valign="top" bgcolor="ivory"><h4>Латинская фраза</h4></td>
+<td valign="top" bgcolor="ivory"><h4>Произношение</h4></td>
+<td valign="top" bgcolor="ivory"><h4>Русский перевод</h4></td>
+</tr>
+
+
+{% for item in dict_list %}
+
+
+<tr>
+<td align="center" valign="top"><h4>{{forloop.counter}}</h4></td>
+<td valign="top"><h4>{{item.lat}}</h4></td>
+<td valign="top"><h4>{{item.trans}} </h4></td>
+<td valign="top"><h4>{{item.rus}} </h4></td>
+</tr>
+
+{% endfor %}
+
+</table>  
+</div>
+
+
+{% endblock %}
+{% block js %} {% endblock %}
+</html>

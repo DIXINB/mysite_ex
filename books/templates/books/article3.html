@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+
+{% block title %} Книгофил {% endblock %}
+{% block homeactive %} active {% endblock homeactive %}
+
+{% block css %}
+
+{% endblock %}
+
+{% block body %}
+	{% load static %}
+
+    {% load bootstrap4 %}
+    {% bootstrap_javascript %}
+    {% bootstrap_css %}
+    <style>body{background-color: ivory}
+    .stx{
+         font-style: italic;
+         font-weight: bold;
+         font-size: 14px;
+		 color: #990000;
+         background-color: #FFFFF0;
+        }
+    .jumbotronN{
+      font-style: normal;
+	  margin-top: 5px;
+      padding: 17px;
+	  color: #990000;
+      background-color: #FFFFF0;
+	 }
+    </style>
+    
+  </head>
+<body>
+
+<div class = "container">
+  <div class="row">
+     <div class="col-md-4">	      	 
+     <p><span class="stx">
+	 <br><br>
+     <img src="{% static 'images/image12.jpg' %}"><br><br>Я. Чекановский (6.10.1882 - 20.07.1965)<br><br><br>
+
+     
+     </span></p>
+</div>
+
+<div class="col-md-8 " ><div class="jumbotronN"><h4 align="center"><br>Передаются ли расовые свойства по наследству</h4><br><h6>&nbsp;&nbsp;{{a3.content | safe}}</h6></div></div> 
+
+  </div>
+</div>
+{% endblock %}
+{% block js %} {% endblock %}
+</html>

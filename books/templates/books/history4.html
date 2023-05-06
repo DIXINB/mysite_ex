@@ -1,0 +1,57 @@
+ {% extends 'base.html' %}
+
+{% block title %} Книгофил {% endblock %}
+{% block homeactive %} active {% endblock homeactive %}
+
+{% block css %}
+
+{% endblock %}
+
+{% block body %}
+	{% load static %}
+    {% load bootstrap4 %}
+    {% bootstrap_javascript %}
+    {% bootstrap_css %}
+    <style>body{background-color: ivory}
+    .stx{
+         font-style: normal;
+         font-weight: bold;
+         font-size: 18px;
+		 color: #990000;
+         background-color: #FFFFF0;
+        }
+    .jumbotron{
+      font-style: italic;
+	  margin-top: 5px;
+      padding: 17px;
+	  color: #990000;
+      background-color: #FFFFF0;
+	 }
+    </style>
+    
+  </head>
+<body>
+
+<div class = "container">
+  <div class="row"><br>
+     <div class="col-md-4"><img src="{% static 'images/image444.jpg' %}">
+     <br>
+     <p><span class="stx">
+         Aestimo vitam unicom bonum.<br> Я считаю жизнь единственным благом.Сенека.<br><br>
+		 Brevis ipsa vita, sed in malis fit longior.<br> Жизнь коротка, но в бедах кажется долгой.Публий Сир.<br><br>
+         Eripitur persona, manet res.<br> Человек гибнет, дело остается.Лукреций.<br><br>
+		 Honesta mors turpi vita potior.<br> Честная смерть лучше позорной жизни.Тацит.<br><br>
+		 Morsque minus poena quam mora mortis habet.<br> Менее мучительна сама смерть, чем ее ожидание.Овидий.<br><br>
+		 Sic vita truditur.<br> Такова жизнь.Петроний. <br><br>
+		 
+		 
+		 </span></p>
+  </div>
+
+<div class="col-md-8 " ><div class="jumbotron"><h2 align="center"><br><br>О древнеримских эпитафиях</h2><br><h6>&nbsp;&nbsp;{{h4.content | safe}}</h6></div></div> 
+
+  </div>
+</div>
+{% endblock %}
+{% block js %} {% endblock %}
+</html>

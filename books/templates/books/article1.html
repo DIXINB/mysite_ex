@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+
+{% block title %} Книгофил {% endblock %}
+{% block homeactive %} active {% endblock homeactive %}
+
+{% block css %}
+
+{% endblock %}
+
+{% block body %}
+	{% load static %}
+
+    {% load bootstrap4 %}
+    {% bootstrap_javascript %}
+    {% bootstrap_css %}
+    <style>body{background-color: ivory}
+    .stx{
+         font-style: italic;
+         font-weight: bold;
+         font-size: 14px;
+		 color: #990000;
+         background-color: #FFFFF0;
+        }
+    .jumbotronN{
+      font-style: normal;
+	  margin-top: 5px;
+      padding: 17px;
+	  color: #990000;
+      background-color: #FFFFF0;
+	 }
+    </style>
+    
+  </head>
+<body>
+
+<div class = "container">
+  <div class="row">
+     <div class="col-md-4">	      	 
+     <p><span class="stx">       
+     <img src="{% static 'images/image6.jpg' %}"><br>Sahelanthropus<br><br><br>
+     <img src="{% static 'images/image7.jpg' %}"><br>Australopithecus<br><br><br>
+     <img src="{% static 'images/image8.jpg' %}"><br>Homo heidelbergensis<br><br><br>
+     <img src="{% static 'images/image9.jpg' %}"><br>Homo sapiens neanderthalensis<br><br><br>
+     <img src="{% static 'images/image10.jpg' %}"><br>Homo sapiens idaltu<br><br><br>
+     <img src="{% static 'images/image11.jpg' %}"><br>Homo sapiens
+     </span></p>
+</div>
+
+<div class="col-md-8 " ><div class="jumbotronN"><h4 align="center"><br>О происхождении человека</h4><h6>&nbsp;&nbsp;{{a1.content | safe}}</h6></div></div> 
+
+  </div>
+</div>
+{% endblock %}
+{% block js %} {% endblock %}
+</html>

@@ -1,0 +1,70 @@
+{% extends 'base.html' %}
+
+{% block title %} Книгофил {% endblock %}
+{% block homeactive %} active {% endblock homeactive %}
+
+{% block css %}
+body {
+font-size: .88rem;
+font-weight: 400;
+line-height: 1.5;
+color: #495057
+}
+{% endblock %}
+
+{% block body %}
+
+{% load static %}
+   
+	{% load thumbnail %}
+    <style>body{background-color: #FEE9A0}
+           btn{background-color: transparent}
+	</style>
+
+<body>
+  
+<!--  <h1 align="center">История</h1>   -->
+  <br>
+<div class = "container">
+  <div class="row">
+
+	 <div class="col-md-8">
+	 <img src="{% static 'images/image3.jpg' %}">
+	 </div>
+ 
+	 <div class="col-md-4 col-md-pull-1" ><br><br>{% for item in hist_list %}  
+													  <h6>{{item.title}}<br> <a href="history{{item.ind}}" class="btn btn-link">>></a>
+  												      </h6>
+                                                      {% endfor %}
+     </div>
+  </div>   
+                                
+     {% if hist_list.has_other_pages %}
+       <ul class="pagination">
+         {% if hist_list.has_previous %}
+           <li><a href="?page={{ hist_list.previous_page_number }}">&laquo;</a></li>
+         {% else %}
+           <li class="disabled"><span>&laquo;</span></li>
+         {% endif %}
+         {% for i in hist_list.paginator.page_range %}
+           {% if hist_list.number == i %}
+             <li class="active"><span>{{ i }} <span class="sr-only">(current)</span></span></li>
+           {% else %}
+             <li><a href="?page={{ i }}">{{ i }}</a></li>
+           {% endif %}
+         {% endfor %}
+         {% if users.has_next %}
+           <li><a href="?page={{ hist_list.next_page_number }}">&raquo;</a></li>
+         {% else %}
+           <li class="disabled"><span>&raquo;</span></li>
+         {% endif %}
+       </ul>
+     {% endif %}
+     
+     </div>
+  </div>
+</div>  
+
+{% endblock %}
+  {% block js %} {% endblock %}
+</html>

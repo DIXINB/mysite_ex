@@ -1,0 +1,33 @@
+ {% extends 'base.html' %}
+
+{% block title %} Книгофил {% endblock %}
+{% block homeactive %} active {% endblock homeactive %}
+
+{% block css %}
+
+{% endblock %}
+
+{% block body %}
+	{% load static %}
+    
+    {% load bootstrap4 %}
+    {% bootstrap_javascript %}
+    {% bootstrap_css %}
+	{% load thumbnail %}
+    <style>body{background-color: #eef1f3}
+           btn{background-color: transparent}
+	</style>
+  </head>
+<body>
+  <h2 align="center">ПОЧТА</h2>
+  <br>
+  <br>
+  <br>
+<div class = "container">
+  <div class="row">
+     <div class="col-md-12"><h6 align="center">Раздел находится в разработке</h6></div>     
+  </div>                                         
+</div>  
+{% endblock %}
+{% block js %} {% endblock %}
+</html>

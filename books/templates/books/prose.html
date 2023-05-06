@@ -1,0 +1,64 @@
+ {% extends 'base.html' %}
+
+{% block title %} Книгофил {% endblock %}
+{% block homeactive %} active {% endblock homeactive %}
+
+{% block css %}
+
+{% endblock %}
+
+{% block body %}
+	{% load static %}
+
+    {% load bootstrap4 %}
+    {% bootstrap_javascript %}
+    {% bootstrap_css %}
+	{% load thumbnail %}
+    <style>body{background-color: #FEE9A0}
+           btn{background-color: transparent}
+	</style>
+  </head>
+<body>
+  <br>
+<div class = "container">
+  <div class="row">
+     <div class="col-md-7"><br><img src="{% static 'images/image77.jpg' %}"></div>
+     <div class="col-md-5 col-md-pull-1" ><br>{% for item in pros_list %}
+                                              
+													  <h4>{{item.title}}&nbsp;&nbsp;&nbsp;{{item.author | safe}}<br> <a href="prose{{item.ind}}" class="btn btn-link">>></a>
+  												      </h4>
+                                              
+                                              <br>
+                                              {% endfor %}
+     </div>
+  </div>   
+                                
+     {% if hist_list.has_other_pages %}
+       <ul class="pagination">
+         {% if hist_list.has_previous %}
+           <li><a href="?page={{ hist_list.previous_page_number }}">&laquo;</a></li>
+         {% else %}
+           <li class="disabled"><span>&laquo;</span></li>
+         {% endif %}
+         {% for i in hist_list.paginator.page_range %}
+           {% if hist_list.number == i %}
+             <li class="active"><span>{{ i }} <span class="sr-only">(current)</span></span></li>
+           {% else %}
+             <li><a href="?page={{ i }}">{{ i }}</a></li>
+           {% endif %}
+         {% endfor %}
+         {% if users.has_next %}
+           <li><a href="?page={{ hist_list.next_page_number }}">&raquo;</a></li>
+         {% else %}
+           <li class="disabled"><span>&raquo;</span></li>
+         {% endif %}
+       </ul>
+     {% endif %}
+    
+     </div>
+  </div>
+</div>  
+
+{% endblock %}
+{% block js %} {% endblock %}
+</html>

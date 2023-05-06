@@ -1,0 +1,50 @@
+ {% extends 'base.html' %}
+
+{% block title %} Книгофил {% endblock %}
+{% block homeactive %} active {% endblock homeactive %}
+
+{% block css %}
+
+{% endblock %}
+
+{% block body %}
+	{% load static %}
+
+    {% load bootstrap4 %}
+    {% bootstrap_javascript %}
+    {% bootstrap_css %}
+    <style>body{background-color: ivory}
+    .stx{
+         font-style: italic;
+         font-weight: bold;
+         font-size: 18px;
+		 color: #990000;
+         background-color: #FFFFF0;
+        }
+    .jumbotron{
+      font-style: italic;
+	  margin-top: 5px;
+      padding: 17px;
+	  color: #990000;
+      background-color: #FFFFF0;
+	 }
+    </style>
+    
+  </head>
+<body>
+
+<div class = "container">
+  <div class="row">
+     <div class="col-md-5"><!--<img src="{% static 'images/image13.jpg' %}" > -->
+     <br>
+	 <br>
+    <img src="{% static 'images/image21.jpg' %}" >
+    </div>
+
+<div class="col-md-7 " ><div class="jumbotron"><h2 align="center"><br>Распорядок дня римлянина</h2><br><h6>&nbsp;&nbsp;{{h3.content}}</h6></div></div> 
+
+  </div>
+</div>
+{% endblock %}
+{% block js %} {% endblock %}
+</html>

@@ -1,0 +1,65 @@
+{% extends 'base.html' %}
+
+{% block title %} Книгофил {% endblock %}
+{% block homeactive %} active {% endblock homeactive %}
+
+{% block css %}
+
+{% endblock %}
+
+{% block body %}
+	
+    <style>body{background-color: ivory}
+    .stx{
+         font-style: italic;
+         font-weight: bold;
+         font-size: 18px;
+		 color: #990000;
+         background-color: #FFFFF0;
+        }
+    .jumbotron{
+      font-style: italic;
+	  margin-top: 5px;
+      padding: 17px;
+	  color: #990000;
+      background-color: #FFFFF0;
+	 }
+    </style>
+    
+  </head>
+
+<body>
+{% load static %}
+<div class = "container">
+  <div class="row">
+	 <div class="col-md-4"><br><br><img src="{% static 'images/image17.jpg' %}">
+     <br>
+     <p><span class="stx">
+         Римский ужин:
+<br>
+Первый вариант. Закуска: лук репчатый, салат, тунец, яйца с рутовым листом, яйца, сыр, оливки;
+Главное блюдо: рыба, устрицы, вымя свиньи, птица.
+<br>
+Второй вариант. Закуска: салат, три улитки и два яйца на каждого человека;
+Главное блюдо: каша из перловой крупы и спельты;
+Десерт: оливки, мангольд, огурцы, лук репчатый.
+<br>
+Третий вариант. Закуска: латук, порей, тунец с яйцами;
+Главное блюдо: зелёная капуста, колбаски в белом мучном соусе, бобы с салом;
+Десерт: сушёный виноград, груши, каштаны.
+         </span></p>
+        <br>
+		<img src="{% static 'images/image171.jpg' %}">
+		<br>
+		<br>
+		<br>
+		<img src="{% static 'images/image172.jpg' %}">
+		 </div>
+<!--     <div class="col-md-8 " ><div class="div1"><h1 align="right">Несколько слов о Сафо</h1><br><h4>&nbsp;&nbsp;{{h2.content}}</h4></div></div>  -->
+<div class="col-md-8 " ><div class="jumbotron"><h2 align="center"><br>О быте древних римлян</h2><br><h6>&nbsp;&nbsp;{{h2.content | safe}}</h6></div></div> 
+
+  </div>
+</div>
+{% endblock %}
+{% block js %} {% endblock %}
+</html>
